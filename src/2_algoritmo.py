@@ -12,3 +12,4 @@ def new_population(size,dimensao,min_val,max_val):
 
     return population
 
+# Test
