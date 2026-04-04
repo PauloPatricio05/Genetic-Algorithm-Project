@@ -59,3 +59,18 @@ def cut(individuo1: list, individuo2: list):
     filho2 = individuo2[:ponto] + individuo1[ponto:]
 
     return filho1, filho2
+
+def nova_mutacao(pai1, pai2):
+    """
+    Combina dois indivíduos (pais) para gerar dois novos indivíduos (filhos).
+    Utiliza a técnica de corte em 1 ponto.
+    """
+    # Garante que ambos os pais são válidos
+    assert len(pai1) == len(pai2) == 30, "Erro: Os pais devem ter exatamente 30 dimensões."
+    ponto_corte = random.randint(1, 29)
+
+    # Misturamos as metades usando o fatiamento [:]
+    filho1 = pai1[:ponto_corte] + pai2[ponto_corte:]
+    filho2 = pai2[:ponto_corte] + pai1[ponto_corte:]
+
+    return filho1, filho2
