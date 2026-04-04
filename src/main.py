@@ -1,4 +1,4 @@
-from algoritmo import new_population, rosenbrock
+from algoritmo import new_population, rosenbrock, sphere, rastrigin
 
 from utils import crossing, mutation, cut, nova_mutacao
 
@@ -29,3 +29,28 @@ for i in range(len(minha_populacao )):
     individuo_atual = minha_populacao[i]
     nota = rosenbrock(individuo_atual)
     print(f" O Indivíduo {i} tirou a nota: {nota:.0f}")
+
+
+
+
+
+#Implementação da função Sphere
+print("\nFitness da função Sphere: \n")
+test_sphere = new_population(30,10,-5,5)
+
+for i in range (30):
+   # Usei o f-string para o print ficar limpo e sem espaços extras
+   print(f"{i+1}° Valor ({sphere(test_sphere[i])})")
+
+
+
+
+
+#Implementação da função Rastrigin
+print("\nFitness da função Rastrigin: \n")
+
+test_rastrigin = new_population(30, 10, -5, 5)
+
+for i in range(30):
+    # Usei o f-string para o print ficar limpo e sem espaços extras
+    print(f"{i+1}° Valor ({rastrigin(test_rastrigin[i])})")
