@@ -14,7 +14,7 @@ def crossing(rate: float):
         False: para não haver cruzamento.
     """
     rate_random = random.uniform(0, 1)
-    if rate_random <= rate:
+    if rate_random >= rate:
         return True
     else:
         return False
@@ -25,18 +25,17 @@ def mutation(rate: float):
     Compara a taxa de cruzamento definida pelo usuário com a taxa aleatória para dizr se vai haver ou não o cruzamento de indivúduos.
 
     Args:
-        rate (float): taxa de mutação. ex.: 0.1 = 10%
+        rate (float): taxa de cruzamento. ex.: 0.1 = 10%
 
     Returns:
-        True: para haver o mutação.
-        False: para não haver mutação.
+        True: para haver o cruzamento.
+        False: para não haver cruzamento.
     """
     rate_random = random.uniform(0, 1)
-    if rate <= rate_random:
+    if rate_random >= rate:
         return True
     else:
         return False
-
 
 def cut(individuo1: list, individuo2: list):
     """
