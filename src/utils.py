@@ -59,17 +59,16 @@ def cut(individuo1: list, individuo2: list):
 
     return filho1, filho2
 
-def nova_mutacao(pai1, pai2):
+def mutation_sub(individuo, taxa_mutacao=0.05, min_val=-100, max_val=100):
     """
-    Combina dois indivíduos (pais) para gerar dois novos indivíduos (filhos).
-    Utiliza a técnica de corte em 1 ponto.
+    Esta função escolhe um gene 
+    e o SUBSTITUI por um novo valor totalmente aleatório.
     """
-    # Garante que ambos os pais são válidos
-    assert len(pai1) == len(pai2) == 30, "Erro: Os pais devem ter exatamente 30 dimensões."
-    ponto_corte = random.randint(1, 29)
-
-    # Misturamos as metades usando o fatiamento [:]
-    filho1 = pai1[:ponto_corte] + pai2[ponto_corte:]
-    filho2 = pai2[:ponto_corte] + pai1[ponto_corte:]
-
-    return filho1, filho2
+    for i in range(len(individuo)):
+        # Joga o dado para ver se esse gene específico vai sofrer mutação
+        if random.random() < taxa_mutacao:
+            
+            # SUBSTITUIÇÃO DIRETA: 
+            individuo[i] = random.uniform(min_val, max_val)
+            
+    return individuo
