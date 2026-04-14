@@ -68,7 +68,7 @@ def mutation_sub(individuo, taxa_mutacao=0.05, min_val=-100, max_val=100):
         # Joga o dado para ver se esse gene específico vai sofrer mutação
         if random.random() < taxa_mutacao:
             
-            # SUBSTITUIÇÃO DIRETA: 
+            # substituição direta: 
             individuo[i] = random.uniform(min_val, max_val)
             
     return individuo
